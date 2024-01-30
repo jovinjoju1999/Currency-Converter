@@ -1,10 +1,18 @@
-import { Button, Grid, TableContainer, Typography } from '@mui/material'
-import { Container } from '@mui/material'
+import { Grid, Container, Typography } from '@mui/material'
 import InputAmount from './Components/InputAmount'
 import SelectCountry from './Components/SelectCountry'
 import SwitchCurrency from './Components/SwitchCurrency'
+import { useContext } from 'react';
+import { CurrencyContext } from './context/CurrencyContext';
 
 function App() {
+  const { fromCurrency, 
+    setFromCurrency, 
+    toCurrency, 
+    setToCurrency
+  }= useContext(CurrencyContext);
+
+
   const boxStyles = {
     background: "#fdfdfd",
     marginTop: "10rem",
@@ -22,9 +30,9 @@ function App() {
       <Typography variant="h5" sx={{marginBottom: "2rem"}}>Accurate currency conversions</Typography>
       <Grid container spacing={2}>
         <InputAmount/>
-        <SelectCountry/>
+        <SelectCountry value={fromCurrency} setValue={setFromCurrency} label="From" />
         <SwitchCurrency/>
-        <SelectCountry/>
+        <SelectCountry  value={toCurrency} setValue={setToCurrency} label="To" />
       </Grid>
     </Container>
   )
