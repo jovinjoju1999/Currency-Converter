@@ -7,7 +7,7 @@ const SwitchCurrency = () => {
     <Grid item xs={12} md="auto">
         <Button sx={{
             borderRadius: 1,
-            height: "100%",
+            height: "100%"
         }}>
             <CompareArrowsIcon sx={{fontSize: 30}}/>
         </Button>
