@@ -13,5 +13,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <CurrencyProvider>
     <App />
     </CurrencyProvider>
-  </React.StrictMode>,
+  </React.StrictMode>
 )
